@@ -8,14 +8,32 @@
 <nav>
   <b>Menu</b> [<a href="index.html">Main page</a>] [<a href="style.css">Styling</a>] [<a href="tables.html">Tables</a>]
 </nav>
-<div>
+<div id="center">
   <header>
     <h1>Compounding interest calculator</h1>
   </header>
   <article>
     <table id="parameters">
       <tr>
-        <td>Column 1</td><td>Column 2</td><td>Column 3</td>
+        <td>Invested capital: </td><td><input name="capital" type="number" placeholder="The amount of initial investment" required /></td>
+      </tr>
+      <tr>
+        <td>Yearly interest rate: </td><td><input name="interest" type="number" placeholder="Interest percentage" step="0.001" required /></td>
+      </tr>
+      <tr>
+        <td>Time: </td><td><input name="time" type="number" placeholder="Time in years" required /></td>
+      </tr>
+      <tr>
+        <td>Are dividents reinvested?</td>
+        <td>
+          <select name="reinvestment">
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Total amount with returns: </td><td> ¤£€$ Amount of money</td>
       </tr>
     </table>
   </article>
@@ -24,11 +42,11 @@
   </footer>
 </div>
 
-<div>
+<div id="left">
 
 </div>
 
-<div>
+<div id="right">
 
 </div>
 </body>
