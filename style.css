@@ -23,7 +23,17 @@ table#parameters, table#results {
     border-collapse: collapse;
 }
 
-table td {
+table#results {
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+}
+
+table#results td {
+    padding: 0.8ex;
+}
+
+table#parameters td {
     border-width: 1px;
     border-color: black;
     border-style: solid;

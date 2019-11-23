@@ -10,17 +10,39 @@
         var v3=parseInt(document.getElementById('v3').value);
         var v4=parseInt(document.getElementById('v4').value);
         var i;
-        var sum = 0;
+        var total = 0;
+        var yearlyDividend=0;
+        var totalDividends=0;
+
         for (i=0; i < v3; i++) {
             if (v4 == 1) {
-              v1 = v1 * (1 + (v2 / 100));
+                totalDividends = totalDividends + (v1 * (v2 / 100));
+                v1 = v1 * (1 + (v2 / 100));
             } else {
-                sum = sum + (v1 * (v2 / 100));
+                totalDividends = totalDividends + (v1 * (v2 / 100));
             }
+            yearlyDividend = v1 * (v2 / 100);
         }
-        sum = sum + v1;
-        var s=document.getElementById('sum');
-        s.value=sum;
+
+        if (v4 == 1) {
+            total = v1;
+        } else {
+            total = v1 + totalDividends;
+        }
+
+        total = total.toFixed(2);
+        yearlyDividend = yearlyDividend.toFixed(2);
+        totalDividends = totalDividends.toFixed(2);
+        v1 = v1.toFixed(2);
+
+        var acc=document.getElementById('acc');
+        acc.value=v1;
+        var yDiv=document.getElementById('yDiv');
+        yDiv.value=yearlyDividend;
+        var tDiv=document.getElementById('tDiv');
+        tDiv.value=totalDividends;
+        var sum=document.getElementById('sum');
+        sum.value=total;
     }
   </script>
 </head>
@@ -31,7 +53,6 @@
 
 <section>
   <div id="left">
-    <p>Left: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
   </div>
 
@@ -52,7 +73,7 @@
           <td>Time: </td><td><input id="v3" name="time" type="number" placeholder="Time in years" required /></td>
         </tr>
         <tr>
-          <td>Are dividents reinvested?</td>
+          <td>Are dividends reinvested?</td>
           <td>
             <select id="v4" name="reinvestment" required>
             <option value="0">No</option>
@@ -68,7 +89,16 @@
       </table>
       <table id="results">
         <tr>
-          <td>Total amount with returns: </td><td><input id="sum" disabled="disabled" /></td>
+          <td>Amount invested after set time: </td><td><input id="acc" disabled="disabled" /></td>
+        </tr>
+        <tr>
+          <td>Yearly dividends after set time: </td><td><input id="yDiv" disabled="disabled" /></td>
+        </tr>
+        <tr>
+          <td>Total dividends received: </td><td><input id="tDiv" disabled="disabled" /></td>
+        </tr>
+        <tr>
+          <td>Total wealth after set time: </td><td><input id="sum" disabled="disabled" /></td>
         </tr>
       </table>
     </article>
@@ -78,8 +108,6 @@
     </footer>
   </div>
   <div id="right">
-
-    <p>Right: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
   </div>
 </section>
