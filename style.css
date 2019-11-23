@@ -1,6 +1,15 @@
 
 nav {
     text-align: center;
+    background-color: ghostwhite;
+    margin: 0 auto;
+    width: 80%;
+}
+
+body {
+    background-image: url("lublinbackground.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 section {
@@ -13,14 +22,20 @@ div#left {
 
 div#center {
     flex: 2 80%;
+    background-color: ghostwhite;
 }
 
 div#right {
     flex: 1 10%;
 }
 
+.tableText {
+    margin-left:5%;
+}
+
 table#parameters, table#results {
     border-collapse: collapse;
+    margin-left: 5%;
 }
 
 table#results {
