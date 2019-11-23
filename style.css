@@ -19,11 +19,11 @@ div#right {
     flex: 1 10%;
 }
 
-table#parameters {
+table#parameters, table#results {
     border-collapse: collapse;
 }
 
-table#parameters td {
+table td {
     border-width: 1px;
     border-color: black;
     border-style: solid;

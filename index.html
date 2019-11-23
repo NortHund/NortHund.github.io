@@ -3,6 +3,17 @@
   <title>NortHund page portfolio</title>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="style.css" />
+  <script type="text/javascript">
+    function calculate() {
+        var v1=parseFloat(document.getElementById('v1').value);
+        var v2=parseFloat(document.getElementById('v2').value);
+        var v3=parseInt(document.getElementById('v3').value);
+        var v4=parseInt(document.getElementById('v4').value);
+        var sum = v1 + v2 + v3 + v4;
+        var s=document.getElementById('sum');
+        s.value=sum;
+    }
+  </script>
 </head>
 <body>
 <nav>
@@ -21,27 +32,37 @@
       <h1>Compounding interest calculator</h1>
     </header>
     <article>
+      <!--<form action="#" method="post">-->
       <table id="parameters">
         <tr>
-          <td>Invested capital: </td><td><input name="capital" type="number" placeholder="The amount of initial investment" required /></td>
+          <td>Invested capital: </td><td><input id="v1" name="capital" type="number" placeholder="The amount of initial investment" step="0.01" required /></td>
         </tr>
         <tr>
-          <td>Yearly interest rate: </td><td><input name="interest" type="number" placeholder="Interest percentage" step="0.001" required /></td>
+          <td>Yearly interest rate: </td><td><input id="v2" name="interest" type="number" placeholder="Interest percentage" step="0.001" required /></td>
         </tr>
         <tr>
-          <td>Time: </td><td><input name="time" type="number" placeholder="Time in years" required /></td>
+          <td>Time: </td><td><input id="v3" name="time" type="number" placeholder="Time in years" required /></td>
         </tr>
         <tr>
           <td>Are dividents reinvested?</td>
           <td>
-            <select name="reinvestment">
+            <select id="v4" name="reinvestment" required>
             <option value="0">No</option>
             <option value="1">Yes</option>
             </select>
           </td>
         </tr>
         <tr>
-          <td>Total amount with returns: </td><td> ¤£€$ Amount of money</td>
+          <td colspan=2>
+            <button onClick="calculate()">  Calculate  </button>
+            <input type="reset" value="Clear"/>
+          </td>
+        </tr>
+      </table>
+      <!--</form>-->
+      <table id="results">
+        <tr>
+          <td>Total amount with returns: </td><td><input id="sum" disabled="disabled" /></td>
         </tr>
       </table>
     </article>
