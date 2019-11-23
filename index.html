@@ -11,12 +11,11 @@
         var v4=parseInt(document.getElementById('v4').value);
         var i;
         var sum = 0;
-        for (i=0; i <= v3; i++) {
-            if (v4 = 1) {
+        for (i=0; i < v3; i++) {
+            if (v4 == 1) {
               v1 = v1 * (1 + (v2 / 100));
             } else {
-                sum = 2;
-                <!--sum = sum + (v1 * (v2 / 100));-->
+                sum = sum + (v1 * (v2 / 100));
             }
         }
         sum = sum + v1;
@@ -42,7 +41,6 @@
       <h1>Compounding interest calculator</h1>
     </header>
     <article>
-      <!--<form action="#" method="post">-->
       <table id="parameters">
         <tr>
           <td>Invested capital: </td><td><input id="v1" name="capital" type="number" placeholder="The amount of initial investment" step="0.01" required /></td>
@@ -65,11 +63,9 @@
         <tr>
           <td colspan=2>
             <button onClick="calculate()">  Calculate  </button>
-            <input type="reset" value="Clear"/>
           </td>
         </tr>
       </table>
-      <!--</form>-->
       <table id="results">
         <tr>
           <td>Total amount with returns: </td><td><input id="sum" disabled="disabled" /></td>
