@@ -9,7 +9,17 @@
         var v2=parseFloat(document.getElementById('v2').value);
         var v3=parseInt(document.getElementById('v3').value);
         var v4=parseInt(document.getElementById('v4').value);
-        var sum = v1 + v2 + v3 + v4;
+        var i;
+        var sum = 0;
+        for (i=0; i <= v3; i++) {
+            if (v4 = 1) {
+              v1 = v1 * (1 + (v2 / 100));
+            } else {
+                sum = 2;
+                <!--sum = sum + (v1 * (v2 / 100));-->
+            }
+        }
+        sum = sum + v1;
         var s=document.getElementById('sum');
         s.value=sum;
     }
