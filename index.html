@@ -1,55 +1,17 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <title>Calculator - Main Page</title>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="favicon.png">
-  <script type="text/javascript">
-    function calculate() {
-        var v1=parseFloat(document.getElementById('v1').value);
-        var v2=parseFloat(document.getElementById('v2').value);
-        var v3=parseInt(document.getElementById('v3').value);
-        var v4=parseInt(document.getElementById('v4').value);
-        var i;
-        var total = 0;
-        var yearlyDividend=0;
-        var totalDividends=0;
+  <script src="script.js"></script>
+  <script src="Chart.js"></script>
 
-        for (i=0; i < v3; i++) {
-            if (v4 == 1) {
-                totalDividends = totalDividends + (v1 * (v2 / 100));
-                v1 = v1 * (1 + (v2 / 100));
-            } else {
-                totalDividends = totalDividends + (v1 * (v2 / 100));
-            }
-            yearlyDividend = v1 * (v2 / 100);
-        }
-
-        if (v4 == 1) {
-            total = v1;
-        } else {
-            total = v1 + totalDividends;
-        }
-
-        total = total.toFixed(2);
-        yearlyDividend = yearlyDividend.toFixed(2);
-        totalDividends = totalDividends.toFixed(2);
-        v1 = v1.toFixed(2);
-
-        var acc=document.getElementById('acc');
-        acc.value=v1;
-        var yDiv=document.getElementById('yDiv');
-        yDiv.value=yearlyDividend;
-        var tDiv=document.getElementById('tDiv');
-        tDiv.value=totalDividends;
-        var sum=document.getElementById('sum');
-        sum.value=total;
-    }
-  </script>
 </head>
 <body>
 <nav>
-  <a href="index.html">Main page</a> | <a href="style.css">Styling</a> | <a href="https://github.com/NortHund/NortHund.github.io">Github Repository</a>
+  <a href="index.html">Main page</a> | <a href="contact.html">Contact</a> | <a href="catalogue.html">Catalogue</a>
 </nav>
 
 <section>
@@ -76,7 +38,7 @@
         <tr>
           <td>Are dividends reinvested?</td>
           <td>
-            <select id="v4" name="reinvestment" required>
+            <select id="v4" name="reinvestment">
             <option value="0">No</option>
             <option value="1">Yes</option>
             </select>
@@ -108,9 +70,14 @@
       </table>
 
     </article>
+    <br>
+    <div id="chart-div">
+      <canvas id="myChart"></canvas>
+      <script src="chartScript.js"></script>
+    </div>
     <footer>
       <br>
-      Created by NortHund
+      &nbsp;Created by NortHund
     </footer>
   </div>
   <div id="right">

@@ -4,10 +4,12 @@ nav {
     background-color: ghostwhite;
     margin: 0 auto;
     width: 80%;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
 }
 
 body {
-    background-image: url("lublinbackground.jpg");
+    background-image: url("img_lublin.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -23,6 +25,8 @@ div#left {
 div#center {
     flex: 2 80%;
     background-color: ghostwhite;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
 
 div#right {
@@ -30,12 +34,14 @@ div#right {
 }
 
 .tableText {
-    margin-left:5%;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 table#parameters, table#results {
     border-collapse: collapse;
     margin-left: 5%;
+    margin-right: 5%;
 }
 
 table#results {
@@ -53,4 +59,57 @@ table#parameters td {
     border-color: black;
     border-style: solid;
     padding: 0.8ex;
+}
+
+p#VE1, p#VE2, p#VE3 {
+    color: red;
+}
+
+div#chart-div {
+    width: 70%;
+    max-width: 800px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+
+img {
+    border: 1px solid #ddd; /* Gray border */
+    padding: 5px; /* Some padding */
+    width: 150px; /* Set a small width */
+    height: 100px;
+}
+
+/* Add a hover effect (blue shadow) */
+img:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+/*Mobile screen stuff*/
+@media screen and (max-width: 800px) {
+	nav {
+		width: 100%;
+	}
+	
+	div#left {
+    flex: 1 0%;
+	}
+
+	div#center {
+		flex: 2 100%;
+		background-color: ghostwhite;
+		border-bottom-left-radius: 8px;
+		border-bottom-right-radius: 8px;
+	}
+
+	div#right {
+		flex: 1 0%;
+	}
+	
+	div#chart-div {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+	
 }
